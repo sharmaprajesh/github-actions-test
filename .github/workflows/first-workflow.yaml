@@ -21,3 +21,16 @@ jobs:
                 pwd
                 echo "USER - $USER"
                 echo "HOME - $HOME"
+    parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+          - name: View SW version
+            run: se_vers
+    dependant-job:
+        runs-on: windows-latest
+        needs: [run-shell-commands,parallel-job-macos]
+        steps:
+          - name: echo a string
+            run: Writ-Output "Windows String"
+          - name: Error Step
+            run: does not exists
