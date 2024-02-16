@@ -31,6 +31,6 @@ jobs:
         needs: [run-shell-commands,parallel-job-macos]
         steps:
           - name: echo a string
-            run: Writ-Output "Windows String"
+            run: Write-Output "Windows String"
           - name: Error Step
             run: does not exists
