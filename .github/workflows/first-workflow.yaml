@@ -14,8 +14,9 @@ jobs:
                 npm -v
             - name: More commands
               run: |
+                echo "ls -la"
                 ls -la
+                echo "pwd|"
                 pwd
-                echo $USER
-                echo $HOME
-                    
+                echo "USER - $USER"
+                echo "HOME - $HOME"
